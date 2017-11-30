@@ -16,8 +16,9 @@
 
 <body>
 
+<!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">CENG3507 Project</a>
+  <a class="navbar-brand" href="{% url 'homepage' %}">CENG3507 Project</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -25,7 +26,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Anasayfa <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'homepage' %}">Anasayfa <span class="sr-only">(current)</span></a>
       </li>
 
       <li class="nav-item dropdown">
@@ -33,10 +34,10 @@
           Dersler
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">1. Sınıf</a>
-          <a class="dropdown-item" href="#">2. Sınıf</a>
-          <a class="dropdown-item" href="#">3. Sınıf</a>
-          <a class="dropdown-item" href="#">4. Sınıf</a>
+          <a class="dropdown-item" href="{% url 'firstclass' %}">1. Sınıf</a>
+          <a class="dropdown-item" href="{% url 'secondclass' %}">2. Sınıf</a>
+          <a class="dropdown-item" href="{% url 'thirdclass' %}">3. Sınıf</a>
+          <a class="dropdown-item" href="{% url 'fourthclass' %}">4. Sınıf</a>
         </div>
       </li>
       <li class="nav-item">
@@ -56,6 +57,13 @@
       </ul>
   </div>
 </nav>
+<!-- end of navbar -->
+
+<!-- block for content -->
+
+{% block content %}{% endblock %}
+
+<!-- end of block for content -->
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
