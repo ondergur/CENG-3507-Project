@@ -29,6 +29,8 @@ class Lecture(models.Model):
         default='Fall'
     )
 
+    image = models.ImageField(upload_to="uploads", blank=True)
+
     def __str__(self):
         return self.code + " " + self.name
 
