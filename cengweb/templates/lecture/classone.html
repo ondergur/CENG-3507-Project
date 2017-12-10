@@ -4,9 +4,17 @@
 <div class="card-group">
     {% for lecture in lectures %}
 
+{#        {% with 0 as counter %}#}
+{#        {% if forloop.counter0|divisibleby:4  %}#}
+{#            <div>#}
+{#                <p><hr>deneme</p>#}
+{#            </div>#}
+{#        {% endif %}#}
+{#        {% endwith %}#}
 
+    <div class="card-columns"> {# eski haline getirmek için bu div i sil #}
     <div class="card">
-        <div id="card-resim">
+        <div id="card-resim" >
             <img class="card-img-top rounded" src="{{ MEDIA_URL }}{{ lecture.image }}" alt="Card image cap">
         </div>
         <div class="card-body">
@@ -20,7 +28,7 @@
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
-
+    </div>
     {% endfor %}
 </div>
 {% endblock %}
