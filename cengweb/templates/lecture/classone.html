@@ -1,10 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="card-group">
+<div class="card-columns">
     {% for lecture in lectures %}
-
-
     <div class="card">
         <div id="card-resim">
             <img class="card-img-top rounded" src="{{ MEDIA_URL }}{{ lecture.image }}" alt="Card image cap">

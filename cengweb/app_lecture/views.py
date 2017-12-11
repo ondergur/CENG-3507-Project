@@ -10,4 +10,6 @@ def homepage(request):
 def classone(request):
     lectures = Lecture.objects.filter(year='1')
     context = {"lectures": lectures}
+
+
     return render(request, 'lecture/classone.html', context)
