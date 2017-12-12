@@ -32,7 +32,7 @@ class Lecture(models.Model):
 
     image = models.ImageField(upload_to="uploads", blank=True, null=True)
     lecturer = models.ForeignKey(Lecturer, on_delete=models.CASCADE, blank=True, null=True)
+    aciklama = models.TextField()
 
     def __str__(self):
         return self.code + " " + self.name
-

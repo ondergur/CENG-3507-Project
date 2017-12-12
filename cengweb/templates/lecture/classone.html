@@ -3,16 +3,16 @@
 {% block content %}
 <div class="card-columns">
     {% for lecture in lectures %}
-    <div class="card">
+    <div class="card ">
         <div id="card-resim">
-            <img class="card-img-top rounded" src="{{ MEDIA_URL }}{{ lecture.image }}" alt="Card image cap">
+            <img class="card-img-top img-fluid rounded" src="{{ MEDIA_URL }}{{ lecture.image }}" alt="Card image cap">
         </div>
         <div class="card-body">
             <h4 class="card-title">{{lecture.name}}</h4>
             <h6 class="card-subtitle mb-2 text-muted">{{lecture.code}}</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                card's
-                content.</p>
+            <p class="card-text">{{lecture.aciklama}}<br>
+                Dersin Hocası: {{lecture.lecturer}}
+            </p>
         </div>
         <div class="card-footer">
             <a href="#" class="btn btn-primary">Go somewhere</a>
