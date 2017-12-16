@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from .models import Lab
 
-# Create your views here.
+
+def index(request):
+    labs = Lab.objects.all()
+    context = {"labs": labs}
+    return render(request, 'lab/index.html', context)

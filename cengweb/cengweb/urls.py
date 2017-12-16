@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^lectures/', include('app_lecture.urls')),
     url(r'^lecturers/', include('app_lecturer.urls')),
+    url(r'^labs/', include('app_lab.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
