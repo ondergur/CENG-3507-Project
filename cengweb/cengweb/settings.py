@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'app_lab.apps.AppLabConfig'
     'app_lecture.apps.AppLectureConfig',
     'app_lecturer.apps.AppLecturerConfig',
     'django.contrib.admin',
