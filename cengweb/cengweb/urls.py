@@ -22,6 +22,7 @@ from app_lecture import views
 urlpatterns = [
     url(r'^$', views.homepage, name="homepage"),
     url(r'^admin/', admin.site.urls),
+    url(r'^lab/', include('app_lab.urls')),
     url(r'^lectures/', include('app_lecture.urls')),
     url(r'^lecturers/', include('app_lecturer.urls')),
 
