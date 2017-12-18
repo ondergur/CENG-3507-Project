@@ -1,12 +1,30 @@
 {% extends "base.html" %}
 
+
 {% block content %}
-<div>
-
-
-denemeeeeee
-
-
-
+<div class="row">
+    {% for lecturer in lecturers %}
+    <div class="col-sm-3">
+        <div class="card">
+            <img class="card-img-top"
+                 src="{{ MEDIA_URL }}{{ lecturer.image }}">
+            <div class="card-block">
+                <h4 class="card-title mt-3">{{lecturer.title}} {{lecturer.name}} {{lecturer.surname}}</h4>
+                <div class="meta">
+                    {{lecturer.aciklama}}
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="icon pull-right">
+                    <button type="button" class="btn btn-default btn-lg">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
+                    </button>
+                    <a href="#"><i class="fa fa-envelope fa-fw fa-2x" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-ban fa-2x" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}
