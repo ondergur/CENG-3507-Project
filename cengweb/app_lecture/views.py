@@ -29,8 +29,3 @@ def classfour(request):
     lectures = Lecture.objects.filter(year='4')
     context = {"lectures": lectures}
     return render(request, 'lecture/classfour.html', context)
-
-def developers(request):
-    asd = ["Ahmet", "Ozan"]
-    context = {"asd": asd}
-    return render(request, 'developers.html', context)

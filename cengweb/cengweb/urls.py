@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^lectures/', include('app_lecture.urls')),
     url(r'^lecturers/', include('app_lecturer.urls')),
     url(r'^lab/', include('app_lab.urls')),
-    url(r'^developers/', include('app_lecture.urls')),
+    url(r'^developers/', include('developers.urls')),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
