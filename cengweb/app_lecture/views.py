@@ -10,22 +10,29 @@ def homepage(request):
 def classone(request):
     lectures = Lecture.objects.filter(year='1')
     context = {"lectures": lectures}
-    return render(request, 'lecture/classone.html', context)
+    return render(request, 'lecture/classes.html', context)
 
 
 def classtwo(request):
     lectures = Lecture.objects.filter(year='2')
     context = {"lectures": lectures}
-    return render(request, 'lecture/classtwo.html', context)
+    return render(request, 'lecture/classes.html', context)
 
 
 def classthree(request):
     lectures = Lecture.objects.filter(year='3')
     context = {"lectures": lectures}
-    return render(request, 'lecture/classthree.html', context)
+    return render(request, 'lecture/classes.html', context)
 
 
 def classfour(request):
     lectures = Lecture.objects.filter(year='4')
     context = {"lectures": lectures}
-    return render(request, 'lecture/classfour.html', context)
+    return render(request, 'lecture/classes.html', context)
+
+
+def details(request, code):
+    lecture = Lecture.objects.filter(pk=code)
+    context = {"lecture": lecture}
+    return render(request, 'lecture/detail.html', context)
+

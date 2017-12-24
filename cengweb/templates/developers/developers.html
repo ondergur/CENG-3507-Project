@@ -1,4 +1,3 @@
-
 <head>
 
     <style>
@@ -248,6 +247,7 @@
 
 
 
+
     </style>
 
 </head>
@@ -256,15 +256,16 @@
 {% block content %}
 
 <div class="container">
-	<div class="row">
-		<div class="col-lg-3 col-sm-6">
+    <div class="row">
+        <div class="col-lg-6 col-sm-6">
 
             <div class="card hovercard">
                 <div class="cardheader">
 
                 </div>
                 <div class="avatar">
-                    <img alt="" src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAaRAAAAJGJmMDJkYTc0LWNiOTUtNDFhZi04ZjRmLTBmODg3ODE2NGQ0MQ.jpg">
+                    <img alt=""
+                         src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAaRAAAAJGJmMDJkYTc0LWNiOTUtNDFhZi04ZjRmLTBmODg3ODE2NGQ0MQ.jpg">
                 </div>
                 <div class="info">
                     <div class="title">
@@ -290,7 +291,64 @@
 
         </div>
 
-	</div>
-</div
+        <div class="col-lg-6 col-sm-6">
+
+            <div class="card hovercard">
+                <div class="cardheader">
+
+                </div>
+                <div class="avatar">
+                    <img alt=""
+                         src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAspAAAAJDU5YjdhMDg4LTgxZTAtNGE0MS1hOTNhLTRjNGVjZjUzYmYyYQ.jpg">
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <a target="_blank" href="https://www.linkedin.com/in/ozan-kahramanoglu/">Ozan Kahramanoğlu</a>
+                    </div>
+                    <div class="desc">Bilgisayar Mühendisliği 3. Sınıf</div>
+                    <div class="desc">Bilgisayar ve Bilişim Topluluğu Kurucu Başkan Yardımcısı</div>
+                    <div class="desc"></div>
+                </div>
+                <div class="bottom">
+                    <a class="" href="https://twitter.com/ozybuzy">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a class="" rel="publisher"
+                       href="https://www.facebook.com/ozybuzy">
+                        <i class="fa fa-facebook-official"></i>
+                    </a>
+                    <a class="" rel="publisher" href="https://www.linkedin.com/in/ozan-kahramanoglu/">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="container">
+    <h1> Bizimle İletişime Geçin</h1>
+<form action="." method="post">
+    <div class="form-group">
+        {% csrf_token %}
+        {% for field in form %}
+        <p>
+        <div class="col-sm-10">
+            {{ field.label_tag }}<br>
+            {{field}}
+        </div>
+        </p>
+        {% endfor %}
+        <div class="col-sm-10">
+        <input type="submit" value="Submit"/>
+            </div>
+    </div>
+</form>
+</div>
+
 
 {% endblock %}
