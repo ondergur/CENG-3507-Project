@@ -8,8 +8,9 @@ class Lab(models.Model):
         unique=True,
     )
     name = models.CharField(max_length=300)
+    capacity = models.CharField(max_length=20)
     image = models.ImageField(upload_to="uploads", blank=True, null=True)
-    aciklama = models.TextField()
+    explanation = models.TextField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return self.code + " " + self.name
