@@ -1,15 +1,11 @@
 from django.shortcuts import render
 from .models import Lecture
+from .forms import QuestionForm
 
 
 def homepage(request):
     context = {"asd": "asd"}
     return render(request, 'homepage.html', context)
-
-
-def candidate(request):
-    context = {"asd": "asd"}
-    return render(request, 'candidate.html', context)
 
 
 def report(request):
@@ -52,4 +48,16 @@ def details(request, code):
     all_lectures = Lecture.objects.filter(lecturer=hoca)
     context = {"lecture": lecture, "dersler": all_lectures}
     return render(request, 'lecture/detail.html', context)
+
+
+def candidate(request):
+    if request.POST:
+        form = QuestionForm(request.POST)
+        form.save()
+    else:
+        form = QuestionForm()
+    return render(request, 'candidate.html',
+                  {'form': form, }
+                  )
+
 

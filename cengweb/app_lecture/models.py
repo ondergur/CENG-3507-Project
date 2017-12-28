@@ -43,3 +43,13 @@ class Lecture(models.Model):
 
     def __str__(self):
         return self.code + " " + self.name
+
+
+class Question(models.Model):
+    name = models.CharField(max_length=150, blank=True)
+    question = models.TextField(blank=True)
+    mail = models.EmailField(blank=True)
+
+    def __str__(self):
+        return self.question + " " + self.mail
+

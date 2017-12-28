@@ -330,25 +330,25 @@
 
 
 
-<div class="container">
-    <h1> Bizimle İletişime Geçin</h1>
-<form action="." method="post">
-    <div class="form-group">
-        {% csrf_token %}
-        {% for field in form %}
-        <p>
-        <div class="col-sm-10">
-            {{ field.label_tag }}<br>
-            {{field}}
-        </div>
-        </p>
-        {% endfor %}
-        <div class="col-sm-10">
-        <input type="submit" value="Submit"/>
+    <div class="container">
+        <h1> Bizimle İletişime Geçin</h1>
+        <form action="." method="post">
+            <div class="form-group">
+                {% csrf_token %}
+                {% for field in form %}
+                    <p>
+                    <div class="col-sm-10">
+                        {{ field.label_tag }}<br>
+                        {{ field }}
+                    </div>
+                    </p>
+                {% endfor %}
+                <div class="col-sm-10">
+                    <input type="submit" value="Yorumunuzu Yollayın"/>
+                </div>
             </div>
+        </form>
     </div>
-</form>
-</div>
 
 
 {% endblock %}
