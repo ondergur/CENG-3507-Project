@@ -7,6 +7,11 @@ def homepage(request):
     return render(request, 'homepage.html', context)
 
 
+def candidate(request):
+    context = {"asd": "asd"}
+    return render(request, 'candidate.html', context)
+
+
 def classone(request):
     lectures = Lecture.objects.filter(year='1')
     context = {"lectures": lectures}
