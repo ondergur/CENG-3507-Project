@@ -1,5 +1,44 @@
+<head>
+    <style>
+        table, th, td{
+            padding: 10px;
+            font-family: 'Montserrat', sans-serif;
+            border: 0px;
+        }
+
+
+
+    </style>
+</head>
+
 {% extends "base.html" %}
 
 {% block content %}
-<h1> DENEME </h1>
+{% for lec in lecture %}
+
+
+<table align="center" width="800px">
+    <tr align="center">
+        <th colspan="4"><h1 > {{lec.name}}</h1></th>
+    </tr>
+
+    <tr align="center">
+        <td colspan="4"><h4 >Dersi veren Akademisyen: {{lec.lecturer}}</h4></td>
+    </tr>
+
+
+    <tr>
+        <td align="center" ><button type="button" class="btn btn-warning">Kredi: {{lec.kredi}}</button></td>
+        <td align="center" ><button type="button" class="btn btn-info">Dönem: {{lec.term}}</button></td>
+        <td align="center" ><button type="button" class="btn btn-info">Dersin Kodu: {{lec.code}}</button></td>
+        <td align="center" ><button type="button" class="btn btn-danger">{{lec.secme}}</button></td>
+    </tr>
+    <tr>
+        <td colspan="4"> {{lec.aciklama}}</td>
+    </tr>
+</table>
+
+
+{% endfor %}
+
 {% endblock %}

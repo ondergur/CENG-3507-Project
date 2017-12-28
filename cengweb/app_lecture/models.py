@@ -30,6 +30,13 @@ class Lecture(models.Model):
         default='Fall'
     )
 
+    secme_choises = (
+        ('Seçmeli', 'Seçmeli'),
+        ('Zorunlu', 'Zorunlu'),
+    )
+
+    kredi = models.CharField(max_length=3, blank=True, null=True, default="0")
+    secme = models.CharField(max_length=20,choices=secme_choises, blank=True, null=True)
     image = models.ImageField(upload_to="uploads", blank=True, null=True)
     lecturer = models.ForeignKey(Lecturer, on_delete=models.CASCADE, blank=True, null=True)
     aciklama = models.TextField()

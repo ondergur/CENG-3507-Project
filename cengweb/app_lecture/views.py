@@ -32,7 +32,11 @@ def classfour(request):
 
 
 def details(request, code):
+    print(code)
+    code = str.replace(code, "-", " ").upper()
+    print(code)
     lecture = Lecture.objects.filter(pk=code)
     context = {"lecture": lecture}
+    print(lecture)
     return render(request, 'lecture/detail.html', context)
 
