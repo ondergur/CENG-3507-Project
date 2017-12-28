@@ -12,6 +12,11 @@ def candidate(request):
     return render(request, 'candidate.html', context)
 
 
+def report(request):
+    context = {"asd": "asd"}
+    return render(request, 'report.html', context)
+
+
 def classone(request):
     lectures = Lecture.objects.filter(year='1')
     context = {"lectures": lectures}
@@ -37,11 +42,14 @@ def classfour(request):
 
 
 def details(request, code):
-    print(code)
     code = str.replace(code, "-", " ").upper()
-    print(code)
     lecture = Lecture.objects.filter(pk=code)
-    context = {"lecture": lecture}
-    print(lecture)
+    print(type(lecture))
+    hoca = ""
+    for i in lecture:
+        hoca = i.lecturer
+
+    all_lectures = Lecture.objects.filter(lecturer=hoca)
+    context = {"lecture": lecture, "dersler": all_lectures}
     return render(request, 'lecture/detail.html', context)
 

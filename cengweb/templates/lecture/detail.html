@@ -5,9 +5,6 @@
             font-family: 'Montserrat', sans-serif;
             border: 0px;
         }
-
-
-
     </style>
 </head>
 
@@ -19,22 +16,47 @@
 
 <table align="center" width="800px">
     <tr align="center">
-        <th colspan="4"><h1 > {{lec.name}}</h1></th>
+        <th colspan="4"><h1> {{lec.name}}</h1></th>
     </tr>
 
     <tr align="center">
-        <td colspan="4"><h4 >Dersi veren Akademisyen: {{lec.lecturer}}</h4></td>
+        <td colspan="4"><h4>Dersi veren Akademisyen: {{lec.lecturer}}</h4></td>
     </tr>
 
 
     <tr>
-        <td align="center" ><button type="button" class="btn btn-warning">Kredi: {{lec.kredi}}</button></td>
-        <td align="center" ><button type="button" class="btn btn-info">Dönem: {{lec.term}}</button></td>
-        <td align="center" ><button type="button" class="btn btn-info">Dersin Kodu: {{lec.code}}</button></td>
-        <td align="center" ><button type="button" class="btn btn-danger">{{lec.secme}}</button></td>
+        <td align="center">
+            <button type="button" class="btn btn-warning">Kredi: {{lec.kredi}}</button>
+        </td>
+        <td align="center">
+            <button type="button" class="btn btn-info">Dönem: {{lec.term}}</button>
+        </td>
+        <td align="center">
+            <button type="button" class="btn btn-info">Dersin Kodu: {{lec.code}}</button>
+        </td>
+        <td align="center">
+            <button type="button" class="btn btn-danger">{{lec.secme}}</button>
+        </td>
     </tr>
     <tr>
-        <td colspan="4"> {{lec.aciklama}}</td>
+        <td colspan="4"><p>{{lec.aciklama}}</p></td>
+    </tr>
+    <tr align="center">
+        <td colspan="4">
+            <h4> Diğer {{lec.lecturer}} Dersleri </h4>
+            <div class="btn-group">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    Verdiği Dersler
+                </button>
+                <div class="dropdown-menu dopdown-menu-right">
+                    {% for ders in dersler %}
+                    <a class="dropdown-item" href="{% url 'details' ders.code|slugify %}">{{ders.name}}</a>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </td>
     </tr>
 </table>
 

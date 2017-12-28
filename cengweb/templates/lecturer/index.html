@@ -34,7 +34,11 @@
             <img class="card-img-top"
                  src="{{ MEDIA_URL }}{{ lecturer.image }}">
             <div class="card-block">
-                <h4 class="card-title mt-3">{{lecturer.title}} {{lecturer.name}} {{lecturer.surname}}</h4>
+
+                <h4 class="card-title mt-3">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+
+                    {{lecturer.title}} {{lecturer.name}} {{lecturer.surname}}</h4>
             </div>
             <div class="card-footer">
                 <!--verdigi dersler-->

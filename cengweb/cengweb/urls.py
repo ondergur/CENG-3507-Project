@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^lecturers/', include('app_lecturer.urls')),
     url(r'^lab/', include('app_lab.urls')),
     url(r'^developers/', include('developers.urls')),
+    url(r'^report', views.report),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
                 + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
