@@ -1,6 +1,34 @@
+<head>
+    <style>
+     h4{
+        text-align: center;
+     }
+
+     .card-img-top{
+        height: 350px;
+     }
+
+
+     .card-block{
+        height: 80px;
+        background-color: lightblue;
+     }
+
+     .card-footer{
+        text-align: center;
+     }
+
+     <!--i{-->
+      <!--margin-left: 10px;-->
+     <!--}-->
+
+
+
+
+    </style>
+</head>
+
 {% extends "base.html" %}
-
-
 {% block content %}
 <div class="row">
     {% for lecturer in lecturers %}
@@ -10,13 +38,28 @@
                  src="{{ MEDIA_URL }}{{ lecturer.image }}">
             <div class="card-block">
                 <h4 class="card-title mt-3">{{lecturer.title}} {{lecturer.name}} {{lecturer.surname}}</h4>
-                <div class="meta">
-                    {{lecturer.aciklama}}
-                </div>
+                <!--<div class="meta">-->
+                <!--</div>-->
             </div>
             <div class="card-footer">
+                <!--verdigi dersler-->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        Verdiği Dersler
+                    </button>
+                    {% with lectures_querry=lecturer.lecture_set.all %}
+                    <div class="dropdown-menu">
+                        {% for lecture in lectures_querry %}
+                        <a class="dropdown-item" href="{% url 'details' lecture.code|slugify %}">{{lecture.name}}</a>
+                        {% endfor %}
+                    </div>
+                    {% endwith %}
+                </div> <br>
+                <!---->
+                <a href="{{lecturer.web_site}}"> <i class="fa fa-id-card-o fa-2x" aria-hidden="true"></i> </a>
+                <a href="mailto:{{lecturer.e_mail}}"> <i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i> </a>
 
-                Buraya buton koy
 
             </div>
         </div>
