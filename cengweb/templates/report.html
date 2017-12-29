@@ -11,15 +11,16 @@
 
 <h3>Define your models</h3>
 <p>We create lecture, lecturer, lab, comment models in our project.<br>
-    lecture and lecturer models are bonded with ForeignKey</p>
+    lecture and lecturer models are bonded with ForeignKey<br>
+    Also lecture and lab models are bonded with ForeingKey</p>
 
 <h3>Dynamic pages</h3>
 <p>Almost all pages are dynamically created by Django. <br>
     <a href="/lectures/firstclass/">/lectures/firstclass</a>, secondclass ext. pages, <a href="/lecturers/">/lecturers page</a>, <br>
-    <a href="lectures/detail/ceng-1003">/lectures/detail</a> pages are dynamically created.</p>
+    <a href="lectures/detail/ceng-1003">/lectures/detail</a> and <a href="/lab">/lab</a> page are dynamically created.</p>
 
 <h3>Using an HTML Table</h3>
-<p>In <a href="lectures/detail/ceng-1003">/lectures/detail</a> pages we used HTML table to place attributes.</p>
+<p>In <a href="lectures/detail/ceng-1003">/lectures/detail</a> and in <a href="/candidate/">/candidate/</a> page we used HTML table to place attributes.</p>
 
 <h3>Forms</h3>
 <p>In <a href="/developers/">/developers</a> page we used a form. <br>
@@ -34,11 +35,12 @@ Edited Bootstrap items as necessary.(cards, nav-bar, icons, buttons)<br>
 In our nav-bar as site icon we used only text but as font we used Ubuntu from Google Fonts <br>
 Also in <a href="/lectures/detail/ceng-1003">/lectures/detail</a>
  pages we used extra font from Google Fonts <br>
-In lecturers page we used Font Awesome for icons</p>
+In <a href="/lecturers">lecturers</a> page we used Font Awesome for icons</p>
 
 <h3>More Models</h3>
 <p>We create lecture, lecturer, lab, comment models in our project.<br>
-    lecture and lecturer models are bind with ForeignKey</p>
+    lecture and lecturer models are bonded with ForeignKey<br>
+Also lecture and lab models are bonded with ForeignKey</p>
 <p>in lecture model we used code attribute as primary key to access this item easyly later,<br>
     used an imageField to use it in the <a href="/lectures/firstclass/">/lectures/...</a> pages<br>
 in lecturer attribute we used ForeingKey to access lecturers.<br>
@@ -61,7 +63,7 @@ But we add in the database mostly only Computer Engineering lecturers <br>
 <p>In <a href="/lectures/firstclass/">lectures/firstclass</a>, secondclass ext. pages we filtered lectures in the view of the page with filter() method <br>
     In <a href="/lecturers/">/lecturers</a> page we filtered lectures that given by lecture in the template with querySets<br>
 We access lectures, bonded with ForeignKey<br>
-    Also used same filtering method addition to filtering in view for <a href="/lectures/detail/ceng-1005">/detail/..</a> pages</p>
+    Also used same filtering method addition to filtering in view for <a href="/lectures/detail/ceng-1005">/detail/..</a> pages and in <a href="/lab">/lab</a> page </p>
 
 
 

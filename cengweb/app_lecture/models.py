@@ -1,5 +1,6 @@
 from django.db import models
 from app_lecturer.models import Lecturer
+from app_lab.models import Lab
 
 
 class Lecture(models.Model):
@@ -39,6 +40,7 @@ class Lecture(models.Model):
     secme = models.CharField(max_length=20,choices=secme_choises, blank=True, null=True)
     image = models.ImageField(upload_to="uploads", blank=True, null=True)
     lecturer = models.ForeignKey(Lecturer, on_delete=models.CASCADE, blank=True, null=True)
+    lab = models.ForeignKey(Lab, blank=True, null=True)
     aciklama = models.TextField()
 
     def __str__(self):

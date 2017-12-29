@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         ul.nav-pills {
-            top: 300px;
+            <!--top: 300px;-->
             left: -10px;
             position: fixed;
         }
@@ -11,6 +11,17 @@
         div.col-8 div {
             height: 80%;
         }
+
+        li ul{
+            align: left;
+            }
+        #main{
+            overflow-y : hidden;
+        }
+
+
+
+
     </style>
 
 </head>
@@ -18,30 +29,47 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div id="body">
-        <div class="container-fluid">
-            <div class="row">
-                <nav class="navbar-dark bg-dark col-sm-1 col-4" >
-                    <ul style="text-align: right" class="nav nav-pills nav-stacked flex-column" data-offset-top="205">
-                        {% for lab in labs %}
-                                <li class="nav-item container-fluid" >
-                                    <a class="nav-link" href="#{{ lab.code }}">{{ lab.name }}</a>
-                                </li>
-                        {% endfor %}
-                    </ul>
-                </nav>
-                <div class="col-sm-11 col-8">
+<div id = "main">
+    <div class="container-fluid">
+        <div class="row">
+            <nav class=" bg-dark col-md-2">
+                <div>
+                <ul style="" class="nav nav-pills ">
                     {% for lab in labs %}
-                        <div id="{{ lab.code }}">
-                            <h1 align="left">{{ lab.name }}</h1>
-                            <p align="left">{{ lab.explanation }}</p>
-                            <img align="right" width="50%" height="auto" src="{{ MEDIA_URL }}{{ lab.image }}">
-                            <br>
-                        </div>
+                    <li class="nav-item container-fluid">
+                        <a class="btn btn-success" style="margin: 10px;" nav-link" href="#{{ lab.code }}">{{ lab.name }}</a>
+                    </li>
                     {% endfor %}
-
+                </ul>
                 </div>
+            </nav>
+            <div class="col-md-10">
+            {% for lab in labs %}
+                <div class="row" style="">
+                    <div class="col-md-6" id="{{ lab.code }}">
+                        <h1>{{ lab.name }}</h1>
+                        <p> Labaratuvar Kapasitesi: {{lab.capacity}} </p>
+                        <p> Bu Labaratuvarda Verilen Dersler</p>
+                        {% with lab_query=lab.lecture_set.all %}
+                        <ul>
+                            {% for lecture in lab_query%}
+                            <li>{{lecture.name}}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endwith %}
+                        <p>{{ lab.explanation }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img style="margin:5%" height="75%" src="{{ MEDIA_URL }}{{ lab.image }}">
+                    </div>
+                </div>
+                {% endfor %}
             </div>
+
+
+
         </div>
+
     </div>
+</div>
 {% endblock %}
